@@ -1,9 +1,9 @@
 import numpy as np
 import utils
 import matplotlib.pyplot as plt
-from assignment_code.softmaxModel import pre_process_images
+from softmaxModel import pre_process_images
 from trainer import BaseTrainer
-from assignment_code.softmaxModel import cross_entropy_loss, SoftmaxModel, one_hot_encode
+from softmaxModel import cross_entropy_loss, SoftmaxModel, one_hot_encode
 np.random.seed(0)
 
 class SoftmaxTrainer(BaseTrainer):
