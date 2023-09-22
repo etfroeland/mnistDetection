@@ -29,11 +29,7 @@ def pre_process_images(X: np.ndarray):
     """
     assert X.shape[1] == 784,\
         f"X.shape[1]: {X.shape[1]}, should be 784"
-    # TODO implement this function (Task 2a)
     bias = np.ones((X.shape[0], 1))
-    #X = 2/(1+np.exp(-X)) - 1
-    #X = X/255
-    #X = 2*X/255 -  1
     X = (X-127.5)/127.5
     X = np.append(X, bias, axis = 1)
     return X
