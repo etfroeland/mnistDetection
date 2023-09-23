@@ -1,5 +1,5 @@
 from typing import Generator
-import mnist
+from . import mnist
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -23,8 +23,6 @@ def batch_loader(
     if not drop_last:
         num_batches = int(np.ceil(len(X) / batch_size))
     indices = list(range(len(X)))
-
-    # TODO (task 2e) implement dataset shuffling here.
     
     if shuffle:
         rand = np.arange(len(X))
@@ -40,9 +38,6 @@ def batch_loader(
         y = Y[batch_indices]
         # return both images (x) and labels (y)
         yield (x, y)
-
-
-### NO NEED TO EDIT ANY CODE BELOW THIS ###
 
 def binary_prune_dataset(class1: int, class2: int, X: np.ndarray, Y: np.ndarray):
     """

@@ -1,9 +1,8 @@
 import numpy as np
-import utils
+import assignment_code.utils as utils
 import matplotlib.pyplot as plt
-from softmaxModel import pre_process_images
-from trainer import BaseTrainer
-from softmaxModel import cross_entropy_loss, SoftmaxModel, one_hot_encode
+from assignment_code.softmaxModel import pre_process_images, cross_entropy_loss, SoftmaxModel, one_hot_encode
+from assignment_code.trainer import BaseTrainer
 np.random.seed(0)
 
 class SoftmaxTrainer(BaseTrainer):
@@ -80,8 +79,6 @@ def main():
     Y_train = one_hot_encode(Y_train, 10)
     Y_val = one_hot_encode(Y_val, 10)
 
-    # ANY PARTS OF THE CODE BELOW THIS CAN BE CHANGED.
-
     # Intialize model
     model = SoftmaxModel(l2_reg_lambda)
     # Train model
@@ -125,9 +122,6 @@ def main():
     model1 = SoftmaxModel(l2_reg_lambda=1.0)
     trainer = SoftmaxTrainer(model1, learning_rate, batch_size, shuffle_dataset,X_train, Y_train, X_val, Y_val,)
     train_history_reg01, val_history_reg01 = trainer.train(num_epochs)
-    # You can finish the rest of task 4 below this point.
-    # Plotting of softmax weights (Task 4b)
-    #plt.imsave("task4b_softmax_weight.png", weight, cmap="gray")
 
     weights = model.w.T
     image = weights[0][:784]

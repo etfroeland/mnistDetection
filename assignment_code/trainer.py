@@ -1,5 +1,5 @@
 import numpy as np
-import utils
+import assignment_code.utils as utils
 
 
 class BaseTrainer:
@@ -92,10 +92,6 @@ class BaseTrainer:
                     train_history["accuracy"][global_step] = accuracy_train
                     val_history["loss"][global_step] = val_loss
                     val_history["accuracy"][global_step] = accuracy_val
-
-                    # TODO (Task 2d): Implement early stopping here.
-                    # You can access the validation loss in val_history["loss"] 
-
 
                     if val_loss > min(window):
                         window.append(val_loss)

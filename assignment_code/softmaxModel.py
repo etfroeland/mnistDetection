@@ -1,5 +1,5 @@
 import numpy as np
-import utils
+import assignment_code.utils as utils
 np.random.seed(0)
 
 
